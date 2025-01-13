@@ -10,3 +10,14 @@ authorRouter.get('/:authorId', (req, res) => {
 });
 
 module.exports = authorRouter;
+
+
+app.get('/google', (req, res) => {
+    res.redirect('https://www.google.com');
+});
+app.get('/',  (req, res) => {
+    res.send('hello world');
+});
+app.get('/', function (req, res) {
+    res.status(200).json({ user: 'geek' });
+});
