@@ -21,3 +21,12 @@ app.get('/',  (req, res) => {
 app.get('/', function (req, res) {
     res.status(200).json({ user: 'geek' });
 });
+// View engine setup
+app.set('view engine', 'ejs');
+
+// Without middleware
+app.get('/user', function (req, res) {
+
+    // Rendering home.ejs page
+    res.render('home');
+})
