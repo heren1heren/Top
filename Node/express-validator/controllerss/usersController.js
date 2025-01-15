@@ -1,5 +1,6 @@
-const usersStorage = require('../storages/usersStorage');
 const { body, validationResult } = require('express-validator');
+const usersStorage = require('../storages/usersStorage');
+
 const alphaErrMessage = 'must only contain letters'; // good tip to refactor the code
 const lengthErr = 'must be between 1 and 10 letters';
 // a middlewares array to check err and then apply to req by using body()
@@ -50,7 +51,7 @@ exports.usersUpdateGet = (req, res) => {
   const user = usersStorage.getUser(req.params.id);
   res.render('updateUser', {
     title: 'Update user',
-    user: user,
+    user,
   });
 };
 
@@ -62,7 +63,7 @@ exports.usersUpdatePost = [
     if (!errors.isEmpty()) {
       return res.status(400).render('updateUser', {
         title: 'Update user',
-        user: user,
+        user,
         errors: errors.array(),
       });
     }
@@ -71,3 +72,8 @@ exports.usersUpdatePost = [
     res.redirect('/');
   },
 ];
+
+exports.usersDeletePost = (req, res) => {
+  usersStorage.deleteUser(req.params.id);
+  res.redirect('/');
+};
