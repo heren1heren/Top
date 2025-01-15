@@ -1,0 +1,9 @@
+<% if (locals.errors) { // accessing errors from req.locals%>
+    <ul>
+        <% errors.forEach(function(error) { %>
+            <li>
+                <%= error.msg %>
+            </li>
+            <% }); %>
+    </ul>
+    <% } %>
