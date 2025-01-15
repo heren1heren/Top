@@ -16,6 +16,15 @@
         <form action="/<%= user.id %>/update" method="POST">
             <input type="text" name="firstName" value="<%= user.firstName %>" required>
             <input type="text" name="lastName" value="<%= user.lastName %>" required>
+            <hr style="visibility: hidden;">
+            <label for="email">Email: </label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="Age">Age: </label>
+            <input type="number" name="age" id="age">
+            <hr style="visibility: hidden;">
+            <label for="Bio">Bio: </label>
+            <input type="text" name="bio" id="bio">
             <button type="submit">Update User</button>
         </form>
         <a href="/">Back to home</a>

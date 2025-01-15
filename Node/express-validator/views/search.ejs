@@ -1,0 +1,15 @@
+<h1>Search Results: with <%= name %>
+</h1>
+<ul>
+
+    <% filterUsers.forEach((user)=> { %>
+        <li>
+            ID: <%= user.id %>, Name: <%= user.firstName %>
+                    <%= user.lastName %>
+                        Email: <%= user.email %>
+                            Age: <%= user.age %>
+                                Bio: <%= user.bio %>
+        </li>
+        <% })%>
+            <a href="/">Go home babe.</a>
+</ul>

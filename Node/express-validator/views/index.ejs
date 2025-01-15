@@ -18,7 +18,10 @@
                 <li>
                     ID: <%= user.id %>, Name: <%= user.firstName %>
                             <%= user.lastName %>
-                                <a href="/<%= user.id %>/update">Update</a>
+                                Email: <%= user.email %>
+                                    Age: <%= user.age %>
+                                        Bio: <%= user.bio %>
+                                            <a href="/<%= user.id %>/update">Update</a>
                 </li>
                 <form action="/<%= user.id %>/delete" method="POST" style="display:inline;">
                     <button type="submit"
@@ -28,6 +31,13 @@
                     <% } %>
     </ul>
     <a href="/create">Create a user</a>
+    <form action="/search" method="GET">
+        Search
+        <hr style="visibility: hidden;">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        <button type="submit"> search</button>
+    </form>
 </body>
 
 </html>
