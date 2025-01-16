@@ -6,7 +6,6 @@ async function getAllUsernames() {
 }
 async function insertUsername(username) {
   //! never use this:
-  //! await pool.query("INSERT INTO usernames (username) VALUES ('" + username + "')");
   await pool.query('INSERT INTO usernames (username) VALUES ($1)', [username]);
 }
 module.exports = {

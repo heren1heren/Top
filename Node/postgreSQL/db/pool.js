@@ -7,3 +7,7 @@ require('dotenv').config();
 module.exports = new Pool({
   connectionString: `postgresql://${process.env.USER}:${process.env.PASSWORD}@localhost:5432/top_users`,
 });
+
+const client = new Client({
+  connectionString: `postgresql://${process.env.USER}:${process.env.PASSWORD}@localhost:5432/top_users`,
+});
