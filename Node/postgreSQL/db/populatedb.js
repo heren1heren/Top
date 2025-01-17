@@ -1,3 +1,5 @@
+//? why do I need to run this file first?
+
 const { Client } = require('pg');
 require('dotenv').config();
 
