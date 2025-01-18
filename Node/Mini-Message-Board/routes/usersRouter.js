@@ -5,7 +5,7 @@ const usersController = require('../controllers/usersController');
 const usersRouter = Router();
 usersRouter.get('/', usersController.getUsers);
 usersRouter.get('/new', usersController.getForm);
-//post
+// //post
 usersRouter.post('/new', usersController.postForm);
 
-usersRouter.get('/:messageText?', usersRouter.getUserByMessage);
+module.exports = usersRouter;

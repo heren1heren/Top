@@ -6,12 +6,8 @@
 
             <li>
                 <%= messages[i].text %>
-                    By <%= messages[i].user %>
-                        When <%=messages[i].added %>
-                            <a
-                                href="<%=messages[i].text %>?author=<%= messages[i].user %>&added=<%=messages[i].added %>">
-                                Open
-                                message detail</a>
+                    By <%= messages[i].username %>
+                        When <%=messages[i].date %>
             </li>
 
             <% } %>
